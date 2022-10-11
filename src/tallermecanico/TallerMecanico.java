@@ -8,6 +8,7 @@ package tallermecanico;
 import Models.Carro;
 import Models.Cliente;
 import Models.Cubiculo;
+import Models.Diagnostico;
 import Models.Kit;
 import Models.Moto;
 import Models.Taller;
@@ -82,31 +83,60 @@ public class TallerMecanico {
             }
         }
          
-        carro1.setMiCliente(cliente2);
-        carro2.setMiCliente(cliente1);
-        moto1.setMiCliente(cliente2);
-        moto2.setMiCliente(cliente2);
-        moto3.setMiCliente(cliente1);
+        //Asignar a los clientes los autos y viceversa
         
+        cliente2.getMisVehiculos().add(carro1);
+        carro1.setMiCliente(cliente2);
+        
+        cliente1.getMisVehiculos().add(carro2);
+        carro2.setMiCliente(cliente1);
+        
+        cliente2.getMisVehiculos().add(moto1);
+        moto1.setMiCliente(cliente2);
+        
+        cliente2.getMisVehiculos().add(moto2);
+        moto2.setMiCliente(cliente2);
         
         cliente1.getMisVehiculos().add(moto3);
-        cliente1.getMisVehiculos().add(carro2);
-        cliente2.getMisVehiculos().add(moto2);
-        cliente2.getMisVehiculos().add(moto1);
-        cliente2.getMisVehiculos().add(carro1);
+        moto3.setMiCliente(cliente1);
         
+         
+        //Crear Diagnosticos
+        Diagnostico diagnostico1= new Diagnostico("1", "Motor dañado");
+        Diagnostico diagnostico2= new Diagnostico("2", "Frenos dañados");
+        Diagnostico diagnostico3= new Diagnostico("3", "Luces dañadas");
+        Diagnostico diagnostico4= new Diagnostico("4", "Mantenimiento");
+        Diagnostico diagnostico5= new Diagnostico("5", "Cambio aceite");
+        Diagnostico diagnostico6= new Diagnostico("6", "Calibracion llantas");
+        
+          
+        //Crear Diagnosticos y relacionarlos con Tecnico y Vehiculo
+        
+        
+        //Ejercicio A
+        // cacharro.carrosCubiculos();
+        
+        //Ejercicio B
+        //System.out.println(cacharro.cubiculoMasPatasMotos());
+        
+        //Ejercicio C
+        //System.out.println(cacharro.clienteMasMotos().getNombre());
+        
+        //Ejercicio D
+        //System.out.println(cacharro.promedioAñosExperiencia());
+        
+        //Ejercicio E
+        //for (Carro carroActual: cacharro.carrosClienteMasFiel()) {
+        //System.out.println(carroActual.getModelo());
+        // }
+
 
         
-//          for (Carro carroActual: cacharro.carrosClienteMasFiel()) {
-//               System.out.println(carroActual.getModelo());
-//        }
 
-//        System.out.println(cacharro.promedioAñosExperiencia());
-        
-//        System.out.println(cacharro.clienteMasMotos().getNombre());
 
-//        System.out.println(cacharro.cubiculoMasPatasMotos());
-        cacharro.carrosCubiculos();
+
+
+   
     }
     
 }

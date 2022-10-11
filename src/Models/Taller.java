@@ -156,8 +156,7 @@ public class Taller {
    
        for (Cubiculo cubiculoActual: this.misCubiculos) {
            System.out.println("Id cubiculo "+ cubiculoActual.getId());
-           System.out.println("Numero carros "+cubiculoActual.cantidadCarros()+"\n");
-           
+           System.out.println("Numero carros "+cubiculoActual.cantidadCarros()+"\n");      
        }
    
     
